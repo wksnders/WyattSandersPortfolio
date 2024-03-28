@@ -1,0 +1,38 @@
+﻿@using Models.PortfolioData;
+@using WyattSandersPortfolio.Components.ReusableComponents.Cards
+
+<section>
+    <ul>
+        @if (ProjectKeyList is null)
+        {
+            <li><em>loading ...</em></li>
+        }
+        else
+        {
+            foreach (string projectkey in ProjectKeyList)
+            {
+                @if (!(ProjectData.projectsToSkills.ContainsKey(projectkey) && ProjectData.ImgProjectsToDescriptions.ContainsKey(projectkey)))
+                {
+                    continue;
+                }
+                <ProjectImageCard SkillList=ProjectData.projectsToSkills[projectkey]
+                                      title=@ProjectData.ImgProjectsToDescriptions[projectkey].DisplayName ImgSource=@ProjectData.ImgProjectsToDescriptions[projectkey].DisplayImg ImgCaption=@ProjectData.ImgProjectsToDescriptions[projectkey].Caption />
+                
+            }
+        }
+    </ul>
+</section>
+
+@code {
+    [Parameter]
+    public required List<string> ProjectKeyList { get; set; }
+
+
+    List<Skill> SkillList = new List<Skill>
+    {
+        Skill.Cplusplus,Skill.Lua,Skill.AgileDevelopment
+    };
+
+    private string title = "Tester Project";
+
+}

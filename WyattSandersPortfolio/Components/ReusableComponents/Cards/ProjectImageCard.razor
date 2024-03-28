@@ -1,0 +1,28 @@
+﻿@using Models.PortfolioData;
+@using WyattSandersPortfolio.Components.ReusableComponents.Images
+@using WyattSandersPortfolio.Components.ReusableComponents.Lists
+
+<li class="project-card">
+    <div class="img-container">
+        <div class="img-clip-mask">
+            <ImgWithHoverCaption ImgSource=@ImgSource ImgCaption=@ImgCaption></ImgWithHoverCaption>
+        </div>
+        <span class="body-text">see more</span>
+    </div>
+    <div class="text-container">
+        ﻿<h2 class="subheader-text weight-heavy">@title</h2>
+        <SkillsDisplay SkillList=@SkillList></SkillsDisplay>
+    </div>
+</li>
+                
+
+@code {
+    [Parameter]
+    public required string title { get; set; }
+    [Parameter]
+    public required List<Skill> SkillList { get; set; }
+    [Parameter]
+    public required string ImgSource { get; set; }
+    [Parameter]
+    public required string ImgCaption { get; set; }
+}

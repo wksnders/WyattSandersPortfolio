@@ -1,0 +1,14 @@
+﻿
+<div class="image">
+    <span class="frame">
+        <img src=@ImageSource alt=@AltDisplayText>
+    </span>
+</div>
+
+@code {
+    [Parameter]
+    public required string ImageSource { get; set; }
+    [Parameter]
+    public required string AltDisplayText { get; set; }
+
+}

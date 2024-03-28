@@ -1,0 +1,15 @@
+﻿
+@using Models.ComponentModels
+
+<menu>
+    @for (int i = 0; i < carousel.NumPages; i++)
+    {
+        int temp = i;
+        <button class="carosel-dot @(i == carousel.ActiveIndex?"carosel-dot-filled":"")" onclick="@(()=>carousel.SetCaroselIndex(temp))"></button>
+    }
+</menu>
+
+@code {
+    [Parameter]
+    public required Carousel carousel { get; set; }
+}

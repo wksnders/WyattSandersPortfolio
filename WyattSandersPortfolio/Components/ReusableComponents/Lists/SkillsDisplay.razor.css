@@ -1,0 +1,29 @@
+﻿p {
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.7em;
+    text-shadow: 0 0 1px transparent;
+    width: 100%;
+    font-family: montserrat,sans-serif;
+    color: #5d5d5d;
+}
+
+span {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.7em;
+    font-family: Arial,sans-serif;
+    color: #5d5d5d;
+}
+
+    span:first-child {
+        display:none;
+    }

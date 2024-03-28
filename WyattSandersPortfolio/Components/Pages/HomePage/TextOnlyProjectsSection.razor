@@ -1,0 +1,98 @@
+﻿@using WyattSandersPortfolio.Components.ReusableComponents.Lists
+@using WyattSandersPortfolio.Components.ReusableComponents.Carousel
+@using Models.PortfolioData;
+@using Models.ComponentModels;
+
+<section style="background-color:@backgroundColor">
+    @if (projects is null || carouselModel is null)
+    {
+        <p><em>loading ...</em></p>
+    }
+    else
+    {
+        <div class="project-content">
+            <div class="project-column double-wide">
+                <h2 class="subheader-text weight-heavy">@projects[carouselModel.ActiveIndex].DisplayName</h2>
+                <p class="body-text">
+                    @projects[carouselModel.ActiveIndex].Description
+                </p>
+                <SkillsDisplay SkillList=@projectSkillLists[carouselModel.ActiveIndex]></SkillsDisplay>
+            </div>
+            <div class="project-column wide-screen">
+                <CarouselTitleSelector PageTitles=@projectTitles carousel=@carouselModel />
+            </div>
+        </div>
+        <img class="left" />
+        <div class="narrow-screen">
+            <CarouselDotSelector carousel=@carouselModel />
+        </div>
+        <img class="right" />
+    }
+</section>
+
+
+@code {
+    [Parameter]
+    public required string backgroundColor { get; set; }
+
+    [Parameter]
+    public required List<string> ProjectKeyList { get; set; }
+
+    List<List<Skill>> projectSkillLists = new List<List<Skill>>();
+
+    Carousel? carouselModel;
+
+    private List<string> projectTitles = new List<string>();
+    private List<TextOnlyProjectData> projects = new List<TextOnlyProjectData>();
+
+    protected override void OnInitialized()
+    {
+        getProjects();
+        carouselModel = new Carousel(projects.Count, OnCarouselUpdate);
+        base.OnInitialized();
+    }
+
+    private void getProjects()
+    {
+        foreach (string projectKey in ProjectKeyList)
+        {
+            TextOnlyProjectData temp;
+            if (!ProjectData.textProjectsToDescriptions.TryGetValue(projectKey,out temp))
+            {
+                continue;
+            }
+            projects.Add(temp);
+            projectTitles.Add(temp.DisplayName);
+            List<Skill> projectSkillList;
+            if (!ProjectData.projectsToSkills.ContainsKey(projectKey))
+            {
+                projectSkillList = new List<Skill>();
+            }
+            else
+            {
+                projectSkillList = ProjectData.projectsToSkills[projectKey];
+            }
+            projectSkillLists.Add(projectSkillList);
+        }
+    }
+
+    private void OnCarouselUpdate()
+    {
+        StateHasChanged();
+    }
+
+
+    private void CarouselNext()
+    {
+        
+    }
+    private void CarouselAdvance()
+    {
+
+    }
+    private void CarouselPrevious()
+    {
+
+    }
+
+}

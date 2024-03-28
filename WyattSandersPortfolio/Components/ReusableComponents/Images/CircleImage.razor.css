@@ -1,0 +1,26 @@
+﻿div {
+    display: block;
+    margin-bottom: 2.125rem;
+}
+
+* {
+    text-align: center;
+    max-width: 100%;
+    vertical-align: top;
+    width: inherit;
+    min-height: 1.5em;
+}
+
+.frame {
+    max-width: 13.5rem;
+    display: inline-block;
+    border-radius: 100%;
+    transition: none;
+    overflow: hidden;
+}
+
+img {
+    border-radius: 0;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}

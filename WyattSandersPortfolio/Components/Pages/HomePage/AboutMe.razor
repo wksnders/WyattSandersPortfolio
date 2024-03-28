@@ -1,0 +1,43 @@
+﻿@using WyattSandersPortfolio.Components.ReusableComponents.Images
+@using WyattSandersPortfolio.Components.ReusableComponents.Lists
+@using Models.PortfolioData;
+<section id="AboutMe">
+    <div class="about-me-content">
+        <div class="skill-column">
+            <h2 class="weight-mid subheader-text">
+                Hi, I'm Wyatt!
+            </h2>
+
+            <CircleImage ImageSource="images/WyattHeadshot.jpg" AltDisplayText="Wyatt Sanders's Profile Photo" />
+            <p class="body-text">
+                I'm a <strong>Full Stack Developer and Game Designer</strong>, I craft engaging experiences and applications
+                to address contemporary challenges.
+                Explore my projects in the <strong>Projects</strong> section or by selecting a specific <strong>skill set</strong>.
+            </p>
+            <p class="body-text">
+                Connect with me on
+                <a class="weight-heavy" rel="noreferrer" href="https://www.linkedin.com/in/wyatt-sanders/" target="_blank">LinkedIn</a>
+                to stay updated. I'm actively seeking <strong>job opportunities</strong> where I can contribute, learn, and grow. If you have such an opportunity, feel free to reach out — I'd love to have a chat!
+            </p>
+        </div>
+        <div class="skill-column double-wide">
+            <h4 class="weight-mid subheader-text">Languages and Tools</h4>
+            <SelectableSkills SkillList="@SkillListProgramming" />
+            <h4 class="weight-mid subheader-text">Skills</h4>
+            <SelectableSkills SkillList="@SkillListGames" />
+        </div>
+    </div>
+</section>
+
+
+@code {
+    List<Skill>? SkillListGames, SkillListProgramming;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        SkillListGames = SkillModel.SkillsByCategory["Software Engineering Practices"];
+        SkillListProgramming = SkillModel.SkillsByCategory["Programming Languages And Tools"];
+    }
+}

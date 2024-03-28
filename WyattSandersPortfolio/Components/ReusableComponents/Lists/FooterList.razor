@@ -1,0 +1,26 @@
+﻿<section>
+    @if (ListItemsToLinks is null)
+    {
+        <p><em>loading ...</em></p>
+    }
+    else
+    {
+        <ul>
+            @foreach (KeyValuePair<string, string> item in ListItemsToLinks)
+            {
+                <li class="nav-item">
+                    <NavLink class="nav-link-footer body-text" href="@item.Value" Match="NavLinkMatch.All">
+                        @item.Key
+                    </NavLink>
+                </li>
+            }
+        </ul>
+    }
+</section>
+
+@code {
+    [Parameter]
+    public required Dictionary<string, string> ListItemsToLinks { get; set; }
+
+}
+

@@ -1,0 +1,50 @@
+﻿@using Models.PortfolioData;
+@using Models.ComponentModels
+@using WyattSandersPortfolio.Components.ReusableComponents.Carousel
+
+<section>
+    @if (testimonials is null || carouselModel is null)
+    {
+        <p><em>loading ...</em></p>
+    }
+    else
+    {
+        <h2 class="header-text">Kind words from co-workers</h2>
+        <div class="testimonial-content">
+            <div class="testimonial-quote-container">
+                <p class="testimonial-quote secondary-subheader-text">
+                    @testimonials[carouselModel.ActiveIndex].Quote
+                </p>
+            </div>
+
+            <h3 class="weight-heavy subheader-text">@testimonials[carouselModel.ActiveIndex].Name</h3>
+            <h4 class="body-text">@testimonials[carouselModel.ActiveIndex].PositionAndCompany</h4>
+            @if (testimonials[carouselModel.ActiveIndex].OnLinkedIn)
+            {
+                <p class="secondary-text">see the full review on my<a rel="noreferrer" href="https://www.linkedin.com/in/wyatt-sanders/" target="_blank"> LinkedIn </a></p>
+            }
+        </div>
+        <img class="left" />
+        <CarouselDotSelector carousel=@carouselModel />
+        <img class="right" />
+    }
+</section>
+@code {
+    //TODO section Height
+    Carousel? carouselModel;
+
+    private List<Testimonial>? testimonials;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        testimonials = Testimonials.GetTestimonialList(); 
+        carouselModel = new Carousel(testimonials.Count, OnCarouselUpdate);
+    }
+
+    private void OnCarouselUpdate()
+    {
+        StateHasChanged();
+    }
+}

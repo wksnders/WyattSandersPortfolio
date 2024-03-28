@@ -1,0 +1,39 @@
+﻿@using Components.ReusableComponents
+@using Models.PortfolioData;
+@using WyattSandersPortfolio.Components.ReusableComponents.Images
+
+
+<menu>
+    @if (SkillList is null)
+    {
+        <p><em>loading ...</em></p>
+    }
+    else
+    {
+        @foreach(Skill skill in SkillList)
+        {
+            @if (skill == Skill.None)
+            {
+                continue;
+            }
+
+            @if (@SkillModel.TryGetDisplayImgForSkill(skill, out ImgPath))
+            {
+                <SkillWithImg SkillIconPath=@ImgPath SkillText=@SkillModel.GetDisplayStringForSkill(skill) />
+            }
+            else
+            {
+                <div class="body-text">
+                    @SkillModel.GetDisplayStringForSkill(skill)
+                </div>
+            }
+        }
+    }
+</menu>
+
+@code {
+
+    [Parameter]
+    public required List<Skill> SkillList { get; set; }
+    string ImgPath;
+}

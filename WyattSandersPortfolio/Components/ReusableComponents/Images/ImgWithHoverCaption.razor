@@ -1,0 +1,15 @@
+﻿<figure>
+    <img class="background" src=@ImgSource alt="Project Image">
+    <div class="background overlay"></div>
+  <figcaption >
+        <h3 class="secondary-subheader-text">@ImgCaption</h3>
+
+  </figcaption>
+</figure>
+
+@code {
+    [Parameter]
+    public required string ImgSource { get; set; }
+    [Parameter]
+    public required string ImgCaption { get; set; }
+}

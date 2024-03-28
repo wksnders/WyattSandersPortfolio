@@ -1,0 +1,84 @@
+﻿
+section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 1rem 1.5rem 0 1.5rem;
+    width: 100%;
+}
+
+
+.background {
+    transform: translateZ(-10px) scale(2);
+}
+
+.foreground {
+    transform: translateZ(-5px) scale(1.5);
+}
+
+.layer-1 {
+    transform: translateZ(-10px) scale(2);
+}
+.layer-2 {
+    transform: translateZ(-12px) scale(2.5);
+}
+.layer-3 {
+    transform: translateZ(-12px) scale(2.5);
+}
+.layer-4 {
+    transform: translateZ(-16px) scale(3);
+}
+.layer-5 {
+    transform: translateZ(-20px) scale(3.5);
+}
+.layer-6 {
+    transform: translateZ(-24px) scale(4.0);
+}
+.layer-7 {
+    transform: translateZ(-28px) scale(4.5);
+}
+.layer-8 {
+    transform: translateZ(-32px) scale(5);
+}
+
+.parallax-layer {
+    position: absolute;
+    height: 100%;
+    width: 101%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+a{
+    position:absolute;
+    bottom:0;
+    right:5px;
+}
+
+.title {
+    color: white;
+    width: 50%;
+}
+
+h2 {
+    display:none;
+    padding-top: 10%;
+    color: white;
+    width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+    .title {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,42 @@
+﻿
+
+<div class="navHeader">
+    <div class="my-nav-toggle-background" style="background:@backgroundColor;">
+        <input @onclick="toggleExpandNav" class=" my-navbar-toggler" type="checkbox" />
+    </div>
+    <h1 class="header-text weight-heavy">@PageTitle</h1>
+</div>
+<div class="nav-scrollable" style="display:@expandNav;">
+    <nav class="flex-column">
+        <div class="nav-item body-text">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
+        </div>
+        <div class="nav-item body-text">
+            <NavLink class="nav-link" href="#AboutMe">About</NavLink>
+        </div>
+        <div class="nav-item body-text">
+            <NavLink class="nav-link" href="#Projects">Projects</NavLink>
+        </div>
+
+        <div class="nav-item body-text">
+            <NavLink class="nav-link" href="counter">Counter</NavLink>
+        </div>
+
+    </nav>
+</div>
+
+@code {
+    [Parameter]
+    public required string PageTitle { get; set; }
+
+    private string expandNav = "none";
+    private string backgroundColor = "transparent";
+
+    private void toggleExpandNav()
+    {
+        expandNav = expandNav.Equals("none") ? "block" : "none"; 
+
+        backgroundColor = expandNav.Equals("none") ? "transparent" : "#666";
+        StateHasChanged();
+    }
+}

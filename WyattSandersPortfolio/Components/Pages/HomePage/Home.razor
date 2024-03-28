@@ -1,0 +1,25 @@
+﻿
+@using Components.Layout.PageLayouts;
+@using Components.ReusableComponents;
+@using WyattSandersPortfolio.Models.PortfolioData;
+
+@layout HomeLayout
+@page "/"
+<PageTitle>Wyatt Sanders' Portfolio</PageTitle>
+
+<AboutMe/>
+<TestimonialsSection/>
+<FeaturedProjectsSection/>
+<TextOnlyProjectsSection backgroundColor="#f0f3f4" ProjectKeyList=TextOnlyProjects1></TextOnlyProjectsSection>
+<TextOnlyProjectsSection backgroundColor="#fff" ProjectKeyList=TextOnlyProjects2></TextOnlyProjectsSection>
+<ProjectImgCardsSection ProjectKeyList=ImageProjects/>
+
+@code{
+        List<string> TextOnlyProjects1 = new List<string> { "3WayMerge", "SpaceWar", "NetworkedSpreadsheet", "ExploringCallStack", "AlgorithExplorationMajorityVote",
+        "ChessDatabase","PeerToPeerNetworking","RandomForestDecisionTrees"};
+    List<string> TextOnlyProjects2 = new List<string> { "ModelsOfComputation", "LowLevelOptimization", "AlphaBetaPruning", "HackTheU", "WestonScienceScholars",
+        "SingularityTurnTracker","GameCraft","IDTech"};
+    List<string> ImageProjects = new List<string> { "SnowyDiorama", "Pawtection","AmoebasAndMore", "VideogameAnalysis", "GameExecutionFlowchart", "SpaceWar",
+        "FalterGame","CharacterConcepting","TurnCloakGame","MarbleDrop"};
+}
+

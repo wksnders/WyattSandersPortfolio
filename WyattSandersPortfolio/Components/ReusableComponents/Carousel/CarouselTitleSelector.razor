@@ -1,0 +1,19 @@
+﻿@using Models.ComponentModels
+
+<menu>
+    @for (int i = 0; i < carousel.NumPages; i++)
+    {
+        int temp = i;
+        <button class="secondary-subheader-text carosel-word @(i == carousel.ActiveIndex?"carosel-word-active":"")" onclick="@(()=>carousel.SetCaroselIndex(temp))">@PageTitles[i]</button>
+    }
+</menu>
+
+@code {
+
+    [Parameter]
+    public required Carousel carousel { get; set; }
+
+    [Parameter]
+    public required List<string> PageTitles { get; set; }
+
+}

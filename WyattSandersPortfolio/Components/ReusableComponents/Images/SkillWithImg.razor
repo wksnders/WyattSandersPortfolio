@@ -1,0 +1,11 @@
+﻿<div>
+    <img src=@SkillIconPath alt="logo" />
+    <span class="mt-2">@SkillText</span>
+</div>
+
+@code {
+    [Parameter]
+    public required string SkillText { get; set; }
+    [Parameter]
+    public required string SkillIconPath { get; set; }
+}

@@ -1,0 +1,29 @@
+﻿@using Components.ReusableComponents
+@using Models.PortfolioData;
+
+
+@if (SkillList is null)
+{
+    <p><em>loading ...</em></p>
+}
+else
+{
+    <p class="body-text weight-light">
+        @foreach(Skill skill in SkillList)
+        {
+            @if (skill == Skill.None)
+            {
+                continue;
+            }
+            <span class="body-text weight-light"> | </span>
+            @SkillModel.GetDisplayStringForSkill(skill)
+            
+        }
+    </p>
+}
+
+@code {
+
+    [Parameter]
+    public required List<Skill> SkillList { get; set; }
+}

@@ -1,0 +1,21 @@
+﻿section {
+    padding: 5rem 1.5rem 2rem 1.5rem;
+    background-color: #f0f3f4;
+}
+
+ul {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+}
+
+
+@media screen and (min-width: 460px) {
+    ul {
+        grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+    }
+}

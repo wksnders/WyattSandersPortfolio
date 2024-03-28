@@ -1,0 +1,20 @@
+﻿@using WyattSandersPortfolio.Components.Layout.SharedLayoutComponents
+
+
+<HeaderBase>
+    <Left>
+        <NavMenu PageTitle="Wyatt Sanders" />
+    </Left>
+    <Right>
+        <div>
+            <CompactContactButtons />
+        </div>
+    </Right>
+</HeaderBase>
+@Body
+<Footer/>
+
+@code {
+    [Parameter]
+    public RenderFragment? Body { get; set; }
+}

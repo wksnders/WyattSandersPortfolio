@@ -1,0 +1,15 @@
+﻿
+menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    align-content:center;
+   justify-content:center;
+}
+
+div {
+    padding: .6rem .8rem;
+    margin-bottom: 0.6rem;
+    margin-right: 0.5rem;
+    display: block;
+}

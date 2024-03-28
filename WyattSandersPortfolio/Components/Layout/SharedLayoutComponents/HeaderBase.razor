@@ -1,0 +1,27 @@
+﻿
+
+
+<div class="header sticky" id="myHeader">
+    <div class="headerSection Left">
+        @Left
+    </div>
+    <div class ="headerSection Right">
+        <nav>
+                <NavLink href="" class="header-nav-link weight-heavy" Match="NavLinkMatch.All">Home</NavLink>
+                <NavLink href="#AboutMe" class="header-nav-link weight-heavy" Match="NavLinkMatch.All">About</NavLink>
+                <NavLink href="#Projects" class="header-nav-link weight-heavy" Match="NavLinkMatch.All">Projects</NavLink>
+                <NavLink href="counter" class="header-nav-link weight-heavy" Match="NavLinkMatch.All">Counter Game</NavLink>
+        </nav>
+        @Right
+    </div>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public RenderFragment? Left { get; set; }
+    [Parameter]
+    public RenderFragment? Right { get; set; }
+
+}
