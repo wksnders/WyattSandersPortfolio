@@ -10,6 +10,9 @@ html, body {
 button, input, optgroup, select, textarea {
     margin: 0;
 }
+figure {
+    margin: 0 0 1rem;
+}
 
 
 .weight-mid {
