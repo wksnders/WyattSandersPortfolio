@@ -1,5 +1,5 @@
 ﻿
-<ul class="buttons">
+<ul class="buttons" style=@("flex-direction: "+style+" ;")>
     <li>
         <HyperlinkButtonLogo Hyperlink="mailto:wksnders+portfolio@gmail.com" ButtonText="Email" ButtonIconPath="SVGs/email.svg" />
     </li>
@@ -11,5 +11,5 @@
     </li>
 </ul>
 @code {
-
+    string style = "column";
 }
