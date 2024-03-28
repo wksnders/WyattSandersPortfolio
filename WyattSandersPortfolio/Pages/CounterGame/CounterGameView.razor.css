@@ -1,0 +1,56 @@
+﻿div.counter-game {
+    display: flex;
+    padding: 2%;
+}
+
+section {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    max-width: 250px;
+}
+
+p {
+}
+
+.item-row {
+    min-height: 24px;
+    border-bottom: 6px groove LightSlateGray;
+    overscroll-behavior-x: contain;
+    margin-bottom: 0;
+    padding-left:.5rem;
+}
+
+    .item-row:last-child {
+        border-bottom: none;
+    }
+
+div.items {
+    margin-top: 3rem;
+    border: 6px groove LightSlateGray;
+    background-color: lavender;
+}
+
+h3 {
+    min-height: 30px;
+    padding-left: 1rem;
+    background-color: aliceblue;
+    border-bottom: 6px groove LightSlateGray;
+    margin-bottom: 0;
+}
+
+img {
+    min-height: 24px;
+    padding: 3px;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+    img.item-disabled {
+    }
+
+    img.item-enabled {
+        transform: scale(1.06);
+    }

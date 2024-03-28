@@ -1,0 +1,88 @@
+﻿@using WyattSandersPortfolio.Models.GameModels
+@rendermode InteractiveWebAssembly
+
+
+<h2 class="subheader-text weight-mid"> Shop </h2>
+<menu>
+    @foreach (KeyValuePair<CounterItemType, CounterShopItem> shopDisplayItem in shopModel.shopItems)
+    {
+        <button @onclick="@(()=>BuyItem(shopDisplayItem.Key) )">
+            <div>
+                <img src=@gameModel.GetItemIcons(shopDisplayItem.Key).IconPathEnabled />
+                <div class="text-container">
+                    <p class="item-name subheader-text">@shopDisplayItem.Value.Name</p>
+                    <p class="item-cost body-text">cost: @CostToDisplayCost(shopDisplayItem.Value.Cost)</p>
+                </div>
+            </div>
+        </button>
+    }
+</menu>
+
+@code {
+    private static readonly Dictionary<CounterItemType, CounterShopItem> initialShopItems = new Dictionary<CounterItemType, CounterShopItem>
+    {
+        {CounterItemType.IncreasePlayerClickValue,
+            new CounterShopItem
+            {
+                Name = "Increase Click Value",
+                Cost = 10,
+                CostIncreaseFactor = 1.5
+            }
+        },
+        {CounterItemType.AutoClicker,
+            new CounterShopItem
+            {
+                Name = "Buy Auto Clicker",
+                Cost = 1,
+                CostIncreaseFactor = 1.2
+            }
+        }
+    };
+
+    CounterGameModel gameModel = CounterGameModel.Instance;
+    CounterGameShopModel shopModel = new CounterGameShopModel(initialShopItems);
+
+    #region buttons
+    private void IncreasePlayerClickValueBtn()
+    {
+        BuyItem(CounterItemType.IncreasePlayerClickValue);
+    }
+
+    private void AddAutoClickerBtn()
+    {
+        BuyItem(CounterItemType.AutoClicker);
+    }
+    #endregion
+
+
+
+    private void BuyItem(CounterItemType type)
+    {
+        ActionWithCost playerAction;
+        if (!shopModel.TryBuyShopItem(gameModel.PlayerGotItem, type, out playerAction))
+        {
+            Console.WriteLine("Error Purchased Item Not Found, with type : " + type);
+            return;
+        }
+        gameModel.EnqueuePlayerAction(playerAction);
+    }
+
+    #region viewUpdate
+    private int CostToDisplayCost(double cost)
+    {
+        return (int)(Math.Floor(cost));
+    }
+
+    private void LateUpdate()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        gameModel.lateUpdateActions.Add(LateUpdate);
+    }
+
+    #endregion
+}

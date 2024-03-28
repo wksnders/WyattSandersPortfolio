@@ -1,0 +1,73 @@
+﻿@using WyattSandersPortfolio.Models.GameModels
+@rendermode InteractiveWebAssembly
+
+<div class="counter-game">
+    <section>
+
+        <h2 role="status" class="header-text">Current count: @gameModel.DisplayCount</h2>
+
+        <button class="btn btn-primary subheader-text" @onclick="IncrementCountBtn">Click me</button>
+
+        <div class="items">
+            <h3 class="subheader-text weight-mid">Items</h3>
+            @foreach (KeyValuePair<CounterItemType,OwnedItemsProperties> item in OwnedItems)
+            {
+                <div class="item-row">
+                    @for (int i = 0; i < item.Value.count; i++)
+                    {
+                        @if (CounterGameModel.ItemIcons[item.Key].activeOnceEveryXSeconds <= 0)
+                        {
+                            <img class="item-disabled" src=@CounterGameModel.ItemIcons[item.Key].IconPathDisabled />
+                        }
+                        else if (i % CounterGameModel.ItemIcons[item.Key].activeOnceEveryXSeconds == item.Value.currentActive)
+                        {
+                            <img class="item-enabled" src=@CounterGameModel.ItemIcons[item.Key].IconPathEnabled />
+                        }
+                        else
+                        {
+                            <img class="item-disabled" src=@CounterGameModel.ItemIcons[item.Key].IconPathDisabled />
+                        }
+                    }
+                </div>
+            }
+            @if (OwnedItems.Keys.Count == 0)
+            {
+                <div class="item-row"></div>
+            }
+        </div>
+    </section>
+    <section>
+        <CounterGameShop />
+    </section>
+</div>
+
+@code {
+    CounterGameModel gameModel = CounterGameModel.Instance;
+    private Dictionary<CounterItemType, OwnedItemsProperties> OwnedItems = new Dictionary<CounterItemType, OwnedItemsProperties>();
+
+    private void IncrementCountBtn()
+    {
+        gameModel.EnqueuePlayerAction(
+            new ActionWithCost
+                {
+                    cost = 0,
+                    action = gameModel.PlayerClicked
+                });
+    }
+
+    #region viewUpdate
+
+    private void LateUpdate()
+    {
+        OwnedItems = gameModel.Inventory.OwnedItems;
+        InvokeAsync(StateHasChanged);
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        gameModel.lateUpdateActions.Add(LateUpdate);
+    }
+
+    #endregion
+}

@@ -1,0 +1,55 @@
+﻿menu {
+    min-width: 350px;
+    max-width: 700px;
+    display:flex;
+    flex-direction:column;
+}
+
+h2 {
+    width:100%;
+    text-align:center;
+}
+
+button {
+    width: 100%;
+    min-height: 24px;
+    max-height: 100px;
+    margin: .1rem 0 .1rem;
+}
+
+div {
+    max-height: 100px;
+    display: flex;
+}
+
+img {
+    flex-basis: 1;
+    flex-grow: 1;
+    min-width: 50px;
+    padding: 1% 0 1%;
+}
+
+div.text-container {
+    flex-basis: 2;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-content:center;
+    align-items:center;
+}
+
+p {
+    margin: 0;
+}
+
+    p.item-name {
+        width: 100%;
+        height:60%;
+        padding-top: 1rem;
+    }
+
+    p.item-cost {
+        width: 100%;
+        height: 40%;
+        padding-bottom: 1rem;
+    }
