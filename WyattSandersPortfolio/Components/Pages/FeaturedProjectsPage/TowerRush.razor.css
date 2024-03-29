@@ -1,6 +1,6 @@
 ﻿article {
     min-height: 90vh;
-    padding: 5em 1.5em 1em 1.5em;
+    padding: 5rem 1.5rem 1rem 1.5rem;
     background: #000;
     color:#fff;
 }
@@ -17,6 +17,10 @@ a {
     position:relative;
     max-width:100%;
     padding: 1em;
+}
+section {
+    padding-top:1rem;
+    padding-bottom:1rem;
 }
 
 

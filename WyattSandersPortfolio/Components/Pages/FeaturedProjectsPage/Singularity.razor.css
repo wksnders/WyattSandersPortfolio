@@ -10,6 +10,15 @@
     align-items: center;
     justify-content: space-around;
 }
+h2 {
+    margin: 0;
+}
+.textpadding {
+    padding: 0 1.5rem 0 1.5rem;
+}
+ul {
+    margin: 0 0 0 1.5rem;
+}
 
 .feature-wrapper {
     margin: 0px;
@@ -17,7 +26,6 @@
     text-align: center;
 }
 .content1 {
-    padding: 1rem;
     height: auto;
     width: 100%;
     text-align: center;
@@ -26,9 +34,13 @@
 .black-background {
     background-color: #000;
     color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .white-background {
     background-color: #fff;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 
