@@ -1,6 +1,6 @@
 ﻿article {
     min-height: 90vh;
-    padding: 5rem 1.5rem 1rem 1.5rem;
+    padding: 7rem 1.5rem 1rem 1.5rem;
     background: #000;
     color:#fff;
 }
@@ -9,7 +9,6 @@ img {
     max-height: 100%;
 }
 .tower-title-img {
-    max-width: 60%;
     max-height: 60%;
     aspect-ratio: 280 / 230
 }
@@ -18,10 +17,10 @@ a {
     max-width:100%;
     padding: 1em;
 }
-section {
-    padding-top:1rem;
-    padding-bottom:1rem;
+h2 {
+    text-align:center;
 }
+
 
 
 .tower-rush-overview {
@@ -34,8 +33,6 @@ section {
 }
 
 .play-now-gid {
-    max-width: 60%;
-    max-height: 60%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
