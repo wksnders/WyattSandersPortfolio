@@ -3,6 +3,13 @@
     min-height: 90vh;
 }
 
+.expand {
+    position: absolute;
+    top:0;
+    width:100%;
+    height: 100%;
+}
+
 .project-content {
     margin-left: 0;
     margin-right: 0;
@@ -11,6 +18,7 @@
 }
 
 .project-column {
+    position:relative;
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -35,8 +43,28 @@
     display:none;
 }
 .narrow-screen {
-    display:flex;
+    display:block;
     justify-content: center;
+}
+
+.carosel-controls {
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: 1fr;
+    justify-content:center;
+}
+
+.endcap {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background-color: unset;
+}
+
+.arrow {
+    height:100%;
+    max-width:100%;
 }
 
 @media screen and (min-width: 900px) {

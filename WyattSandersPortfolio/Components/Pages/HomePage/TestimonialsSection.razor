@@ -11,6 +11,10 @@
     {
         <h2 class="header-text">Kind words from co-workers</h2>
         <div class="testimonial-content">
+
+            <img class="arrow left" src="SVGs/left-arrow.svg" />
+            <img class="arrow right" src="SVGs/right-arrow.svg" />
+            <CarouselLeftRightControls carousel=@carouselModel />
             <div class="testimonial-quote-container">
                 <p class="testimonial-quote secondary-subheader-text">
                     @testimonials[carouselModel.ActiveIndex].Quote
@@ -24,9 +28,7 @@
                 <p class="secondary-text">see the full review on my<a rel="noreferrer" href="https://www.linkedin.com/in/wyatt-sanders/" target="_blank"> LinkedIn </a></p>
             }
         </div>
-        <img class="left" />
         <CarouselDotSelector carousel=@carouselModel />
-        <img class="right" />
     }
 </section>
 @code {

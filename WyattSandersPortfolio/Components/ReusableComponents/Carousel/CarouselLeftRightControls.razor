@@ -1,0 +1,12 @@
+﻿@using Models.ComponentModels
+<div>
+    <button type="button" aria-label="Previous" @onclick=@(() => carousel.Previous(true))>
+    </button>
+    <button type="button" aria-label="Next" @onclick=@(() => carousel.Next(true))>
+    </button>
+</div>
+
+@code {
+    [Parameter]
+    public required Carousel carousel { get; set; }
+}

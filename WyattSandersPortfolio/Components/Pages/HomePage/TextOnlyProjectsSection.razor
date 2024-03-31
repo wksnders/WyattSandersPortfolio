@@ -12,6 +12,9 @@
     {
         <div class="project-content">
             <div class="project-column double-wide">
+                <div class="narrow-screen expand">
+                    <CarouselLeftRightControls carousel=@carouselModel />
+                </div>
                 <h2 class="subheader-text weight-heavy">@projects[carouselModel.ActiveIndex].DisplayName</h2>
                 <p class="body-text">
                     @projects[carouselModel.ActiveIndex].Description
@@ -22,11 +25,15 @@
                 <CarouselTitleSelector PageTitles=@projectTitles carousel=@carouselModel />
             </div>
         </div>
-        <img class="left" />
-        <div class="narrow-screen">
+        <div class="narrow-screen carosel-controls">
+            <button class="endcap" type="button" aria-label="Previous" @onclick=@(() => carouselModel.Previous(true))>
+                <img class="arrow left" src="SVGs/left-arrow.svg" />
+            </button>
             <CarouselDotSelector carousel=@carouselModel />
+            <button class ="endcap" type="button" aria-label="Next" @onclick=@(() => carouselModel.Next(true))>
+                <img class="arrow right" src="SVGs/right-arrow.svg" />
+            </button>
         </div>
-        <img class="right" />
     }
 </section>
 

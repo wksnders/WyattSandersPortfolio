@@ -9,16 +9,20 @@ section {
 }
 
 div .testimonial-content {
+    position: relative;
     margin-bottom: 2rem;
     padding: 0;
     border: 0;
     height: 55vh;
-    min-height:400px;
+    min-height: 400px;
+    justify-content: center;
+    align-items: center;
 }
 
 .testimonial-quote-container {
     max-width: 700px;
     margin: 0 auto 2.5rem;
+    padding:0 2rem;
     height: 62.5%;
     overflow-y: clip;
     display: flex;
@@ -39,4 +43,20 @@ h2 {
 h3 {
     margin-bottom: 0.25rem;
 }
+
+.arrow {
+    position:absolute;
+    opacity: .25;
+    width: 4rem;
+    height: 20%;
+    top:40%;
+}
+
+.left {
+    left:-1rem;
+}
+.right {
+    right:-1rem;
+}
+
 
