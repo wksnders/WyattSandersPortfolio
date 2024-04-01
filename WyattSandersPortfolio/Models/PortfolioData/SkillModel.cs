@@ -68,7 +68,7 @@
             { Skill.XML, "XML"},
             { Skill.MobileGames, "Mobile Games"},
             { Skill.Json, "JSON"},
-            { Skill.TestDrivenDevelopment, "Test Driven Development"},
+            { Skill.TestDrivenDevelopment, "Test-Driven Development"},
             { Skill.AgileDevelopment, "Agile Development"},
             { Skill.Git, "Git"},
             { Skill.NetworkEngineering, "Network Engineering"},
