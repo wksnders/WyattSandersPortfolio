@@ -13,8 +13,9 @@ div .testimonial-content {
     margin-bottom: 2rem;
     padding: 0;
     border: 0;
-    height: 55vh;
-    min-height: 400px;
+    min-height: max(400px,55vh);
+    display:flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
 }
@@ -22,26 +23,30 @@ div .testimonial-content {
 .testimonial-quote-container {
     max-width: 700px;
     margin: 0 auto 2.5rem;
-    padding:0 2rem;
-    height: 62.5%;
-    overflow-y: clip;
+    padding: 0 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: fit-content;
+    flex-grow: 8;
 }
 .testimonial-quote {
     text-align: center;
-    text-overflow:ellipsis;
-    margin:0;
+    text-overflow: ellipsis;
+    margin: 0;
+    flex-grow: 1;
+    max-height: 100%;
 }
 
 h2 {
     margin-bottom: 1.5rem;
     font-weight: 700;
+    flex-grow: 0;
 }
 
 h3 {
     margin-bottom: 0.25rem;
+    flex-grow: 0;
 }
 
 .arrow {

@@ -25,7 +25,7 @@
                 });
                 TestimonialList.Add(new Testimonial
                 {
-                    Quote = "\"Wyatt is a sharp developer with a positive attitude and a great aptitude to learn and accept feedback.\"",
+                    Quote = "\"Wyatt is a sharp developer with a positive attitude and a great aptitude to learn and accept feedback...his positive attitude when taking on tasks and incorporating direction changes stood out to me. \"",
                     PositionAndCompany = "CCO, Solar Forge Games",
                     Name = "Jake Muehle",
                     OnLinkedIn = true
