@@ -55,7 +55,6 @@
     }
     public static class SkillModel
     {
-        //maybe map to logos in future?
         public static Dictionary<Skill, String> SkillsToDisplayString = new Dictionary<Skill, string> {
             { Skill.None, "Error skill is none"},
             { Skill.CSharp, "C#"},
@@ -131,6 +130,9 @@
             { Skill.React, "SVGs/Languages/React.svg"},
             { Skill.Blazor, "SVGs/Languages/Blazor.svg"}
         };
+        public static Dictionary<Skill, String> SkillsToHrefExample = new Dictionary<Skill, string> {
+            
+        };
 
         public static Dictionary<string, List<Skill>> SkillsByCategory = new Dictionary<string, List<Skill>>
         {
@@ -163,6 +165,17 @@
                 return false;
             }
             ImgPath = SkillsToDisplayImg[skill];
+            return true;
+        }
+
+        public static bool TryGetHrefForSkill(Skill skill, out string Href)
+        {
+            Href = "Error skill not found";
+            if (!SkillsToHrefExample.ContainsKey(skill))
+            {
+                return false;
+            }
+            Href = SkillsToHrefExample[skill];
             return true;
         }
     }
