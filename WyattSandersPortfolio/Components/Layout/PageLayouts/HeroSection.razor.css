@@ -52,10 +52,15 @@ section {
 /* text */
 
 h1 {
-    text-align:left;
+    text-align: left;
     color: black;
     width: 100%;
+    font-size: 14vw;
 }
+.vertical-spacer {
+    margin-bottom:0;
+}
+
 h2 {
     color: black;
     width: 100%;
@@ -190,7 +195,7 @@ span {
     grid-column-start: 2;
     grid-row-start: 4;
     width: 100%;
-    height: 100%;
+    bottom:0;
 }
 .title-text-wrapper-button {
     grid-column-start: 2;
@@ -349,6 +354,25 @@ iframe {
         transform: scale(1);
     }
 }
+.fade-out {
+    opacity: 1;
+    animation: fade-out-anim forwards;
+    animation-timeline: view();
+    animation-range: cover 60% cover 90%;
+}
+
+
+@keyframes fade-out-anim {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 120%;
+        transform: scale(1);
+    }
+}
 
 .waves {
     position: absolute;
@@ -403,8 +427,9 @@ iframe {
         height: 120%;
     }
 
-    .title {
-        font-size: 3.5rem;
+    h1 {
+        font-size: 4.8vw;
+        
     }
     .waves {
         height: 5vh;
