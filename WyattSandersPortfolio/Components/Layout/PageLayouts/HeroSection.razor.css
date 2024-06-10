@@ -234,6 +234,18 @@ span {
     gap:10%;
 }
 
+a {
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: none;
+    color: rgba(255,255,255,0.78);
+    cursor: pointer;
+    max-width: 100%;
+    width: auto;
+}
+
 /* video */
 iframe {
     clip-path: url(#squircleClip);
