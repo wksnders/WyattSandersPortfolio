@@ -56,6 +56,7 @@ h1 {
     color: black;
     width: 100%;
     font-size: 14vw;
+    margin:0;
 }
 .vertical-spacer {
     margin-bottom:0;
@@ -69,7 +70,10 @@ span {
     color:maroon;
 }
 .scrolling-text {
-    overflow:hidden;
+    overflow: hidden;
+    text-align:center;
+    
+    white-space: nowrap;
 }
 /* shapes */
 .flower {
@@ -179,6 +183,7 @@ span {
 }
 
 .title-text-wrapper-top {
+    position:relative;
     grid-column-start: 2;
     grid-row-start: 2;
     width: 100%;
