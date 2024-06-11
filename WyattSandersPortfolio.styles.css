@@ -295,7 +295,6 @@ p[b-hpgi98n0u4] {
     align-items: start;
     gap: 10%;
 }
-
 a[b-hpgi98n0u4] {
     align-items: center;
     justify-content: center;
@@ -956,6 +955,7 @@ article[b-khgqtssdjx] {
     min-height:90vh;
     padding: 5rem 1.5rem 1rem 1.5rem;
     flex-direction:row-reverse;
+    background: #fff;
 }
 div[b-khgqtssdjx] {
     position: relative;
