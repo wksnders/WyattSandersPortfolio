@@ -2,6 +2,7 @@
     min-height:90vh;
     padding: 5rem 1.5rem 1rem 1.5rem;
     flex-direction:row-reverse;
+    background: #fff;
 }
 div {
     position: relative;
