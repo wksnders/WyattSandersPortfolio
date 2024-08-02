@@ -1,0 +1,27 @@
+﻿@using WyattSandersPortfolio.Models.GameModels
+<article id="DailyChest">
+    <h3>--- * ! * DailyChest *  ! * ---</h3>
+    <h5>adventures in procedural generation</h5>
+
+
+    <div class="items">
+        <h3 class="subheader-text weight-mid">Gold : @todaysChest.gold gp</h3>
+        <h3 class="subheader-text weight-mid">Items</h3>
+        @foreach (GameItem item in todaysChest.items)
+        {
+            <div class="item-row">
+                @item.Quantity
+                @item.Name
+                @item.GoldValue gp
+            </div>
+        }
+        @if (todaysChest.items.Count == 0)
+        {
+            <div class="item-row"></div>
+        }
+    </div>
+</article>
+@code {
+    RandomItemChest todaysChest = DailyRandomChest.GetDailyChest();
+
+}
