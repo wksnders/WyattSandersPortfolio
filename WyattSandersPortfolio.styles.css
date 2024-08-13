@@ -968,6 +968,10 @@ h5[b-vug9y63i56] {
     text-align: center;
 }
 
+h4[b-vug9y63i56] {
+    text-align: center;
+}
+
 
 .chest-page[b-vug9y63i56] {
     display: block;
@@ -1014,7 +1018,35 @@ h5[b-vug9y63i56] {
     width: 28%;
     height: 65%;
     z-index: 2;
+    overflow-y: auto;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    box-sizing: content-box;
 }
+
+.inventory-table[b-vug9y63i56] {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+    .inventory-table th[b-vug9y63i56],
+    .inventory-table td[b-vug9y63i56] {
+        padding: 8px;
+        text-align: left;
+    }
+
+    .inventory-table th[b-vug9y63i56] {
+        background-color: rgba(255, 255, 255, 0.1);
+        font-weight: bold;
+    }
+
+    .inventory-table tr:nth-child(even)[b-vug9y63i56] {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
 /* /Components/Pages/FeaturedProjectsPage/Prayr.razor.rz.scp.css */
 article[b-khgqtssdjx] {
     min-height:90vh;
