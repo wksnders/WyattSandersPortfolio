@@ -1,6 +1,11 @@
 ﻿div.counter-game {
-    display: flex;
     padding: 2%;
+}
+
+@media screen and (min-width: 600px) {
+    div.counter-game {
+        display: flex;
+    }
 }
 
 section {
