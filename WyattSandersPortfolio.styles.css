@@ -839,10 +839,11 @@ h2[b-84ix9dn5gz] {
 }
 /* /Components/Pages/CounterGame/CounterGameShop.razor.rz.scp.css */
 menu[b-jjsjiaso48] {
-    min-width: 350px;
+    min-width: 100%;
     max-width: 700px;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
+    padding:1rem;
 }
 
 h2[b-jjsjiaso48] {
@@ -854,28 +855,29 @@ button[b-jjsjiaso48] {
     width: 100%;
     min-height: 24px;
     max-height: 100px;
-    margin: .1rem 0 .1rem;
+    margin: .1rem 0;
+    padding: 0;
 }
 
 div[b-jjsjiaso48] {
     max-height: 100px;
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 img[b-jjsjiaso48] {
-    flex-basis: 1;
-    flex-grow: 1;
     min-width: 50px;
+    height: auto; 
     padding: 1% 0 1%;
+    flex-shrink: 0;
 }
 
 div.text-container[b-jjsjiaso48] {
-    flex-basis: 2;
-    flex-grow: 2;
     display: flex;
     flex-direction: column;
-    align-content:center;
-    align-items:center;
+    justify-content: center;
+    padding-right:.5rem;
 }
 
 p[b-jjsjiaso48] {
@@ -883,20 +885,21 @@ p[b-jjsjiaso48] {
 }
 
     p.item-name[b-jjsjiaso48] {
-        width: 100%;
-        height:60%;
-        padding-top: 1rem;
+        padding-top: 0.5rem;
     }
 
     p.item-cost[b-jjsjiaso48] {
-        width: 100%;
-        height: 40%;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
     }
 /* /Components/Pages/CounterGame/CounterGameView.razor.rz.scp.css */
 div.counter-game[b-m1voqcgf00] {
-    display: flex;
     padding: 2%;
+}
+
+@media screen and (min-width: 600px) {
+    div.counter-game[b-m1voqcgf00] {
+        display: flex;
+    }
 }
 
 section[b-m1voqcgf00] {
@@ -1019,9 +1022,6 @@ h4[b-vug9y63i56] {
     height: 65%;
     z-index: 2;
     overflow-y: auto;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    box-sizing: content-box;
 }
 
 .inventory-table[b-vug9y63i56] {
