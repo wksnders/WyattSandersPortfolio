@@ -950,6 +950,71 @@ img[b-m1voqcgf00] {
     img.item-enabled[b-m1voqcgf00] {
         transform: scale(1.06);
     }
+/* /Components/Pages/DailyChestPage/DailyChest.razor.rz.scp.css */
+.daily-chest-page[b-vug9y63i56] {
+    background-color: black;
+    color:aqua;
+    width:100%;
+    height:fit-content;
+}
+
+h3[b-vug9y63i56] {
+    padding-top: 1rem;
+    width:100%;
+    text-align:center;
+}
+h5[b-vug9y63i56] {
+    width: 100%;
+    text-align: center;
+}
+
+
+.chest-page[b-vug9y63i56] {
+    display: block;
+    position: relative;
+    height: fit-content;
+    max-width: 100%;
+}
+
+.chest-img-container[b-vug9y63i56] {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto; 
+}
+
+.chest-img[b-vug9y63i56] {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+.chest-img-overlay[b-vug9y63i56] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.daily-chest-button[b-vug9y63i56] {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.items[b-vug9y63i56] {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 28%;
+    height: 65%;
+    z-index: 2;
+}
 /* /Components/Pages/FeaturedProjectsPage/Prayr.razor.rz.scp.css */
 article[b-khgqtssdjx] {
     min-height:90vh;
@@ -1487,6 +1552,62 @@ section[b-1usqj3t6qa] {
         display: none;
     }
 
+}
+/* /Components/ReusableComponents/Buttons/RainbowHighlight.razor.rz.scp.css */
+button[b-ff6nidctt7] {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    touch-action: manipulation;
+}
+
+    button[b-ff6nidctt7]:before {
+        content: "";
+        background: linear-gradient( 45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000 );
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        -webkit-filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing-button-85-b-ff6nidctt7 20s linear infinite;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+@keyframes glowing-button-85-b-ff6nidctt7 {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+button[b-ff6nidctt7]:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #222;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
 }
 /* /Components/ReusableComponents/Cards/ProjectImageCard.razor.rz.scp.css */
 li.project-card[b-9nae7n1qnc] {
