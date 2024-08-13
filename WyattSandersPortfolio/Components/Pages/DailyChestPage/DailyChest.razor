@@ -5,7 +5,7 @@
         <h3 class="header-text weight-mid">--- * ! * DailyChest *  ! * ---</h3>
         <h5 class="subheader-text weight-mid">adventures in procedural generation</h5>
     </header>
-    
+
     @if (isChestOpened)
     {
         <div class="chest-page">
@@ -14,25 +14,40 @@
                 <div class="chest-img-overlay">
                     <div class="items">
                         <h4 class="body-text">Gold : @todaysChest.gold gp</h4>
-                        <h4 class="body-text weight-mid">Items</h4>
-                        @foreach (GameItem item in todaysChest.items)
-                        {
-                            <div class="item-row">
-                                @item.Quantity
-                                @("\t" + item.Name)
-                                @item.GoldValue gp
-                            </div>
-                        }
-                        @if (todaysChest.items.Count == 0)
-                        {
-                            <div class="item-row"></div>
-                        }
+                        <table class="inventory-table">
+                            <thead>
+                                <tr>
+                                    <th>Count</th>
+                                    <th>Item</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (GameItem item in todaysChest.items)
+                                {
+                                    <tr>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.GoldValue gp</td>
+                                    </tr>
+                                }
+                                @if (todaysChest.items.Count == 0)
+                                {
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     }
-    else{
+    else
+    {
         <div class="chest-page" style="visibility:@isChestOpened">
             <div class="chest-img-container">
                 <img class="chest-img" src="DailyChestComponents/ClosedChest.png" alt="a closed tresure chest" />
@@ -42,7 +57,7 @@
             </div>
         </div>
     }
-    
+
 
 </article>
 @code {
