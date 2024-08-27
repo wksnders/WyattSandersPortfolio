@@ -36,6 +36,14 @@
                 Cost = 1,
                 CostIncreaseFactor = 1.2
             }
+        },
+        {CounterItemType.ClickPrinter,
+            new CounterShopItem
+            {
+                Name = "Buy Click Printer",
+                Cost = 15,
+                CostIncreaseFactor = 1.2
+            }
         }
     };
 
@@ -51,6 +59,10 @@
     private void AddAutoClickerBtn()
     {
         BuyItem(CounterItemType.AutoClicker);
+    }
+    private void AddClickPrinterBtn()
+    {
+        BuyItem(CounterItemType.ClickPrinter);
     }
     #endregion
 

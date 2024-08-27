@@ -37,6 +37,11 @@
                 new CounterAutoClickerItem{
                     autoClickerValue = 0.01
                 }
+            },
+            {  CounterItemType.ClickPrinter,
+                new CounterAutoClickerItem{
+                    autoClickerValue = 0.10
+                }
             }
         };
 
@@ -54,6 +59,13 @@
                 new CounterItemIcons{
                     IconPathEnabled = "ClickerGameComponents/AutoClickerIconClick.svg",
                     IconPathDisabled = "ClickerGameComponents/AutoClickerIconWait.svg",
+                    activeOnceEveryXSeconds = 10
+                }
+            },
+            {  CounterItemType.ClickPrinter,
+                new CounterItemIcons{
+                    IconPathEnabled = "ClickerGameComponents/ClickPrinterIconClick.svg",
+                    IconPathDisabled = "ClickerGameComponents/ClickPrinterIconWait.svg",
                     activeOnceEveryXSeconds = 10
                 }
             }
@@ -197,7 +209,8 @@
     {
         None,
         IncreasePlayerClickValue,
-        AutoClicker
+        AutoClicker,
+        ClickPrinter
 
     }
     public class CounterGameShopModel
