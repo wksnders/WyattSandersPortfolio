@@ -36,6 +36,7 @@
         MIPS,
         Teamwork,
         Python,
+        Django,
         ProjectPlanning,
         DataStructures,
         AsymtoticNotation,
@@ -43,6 +44,7 @@
         C,
         dotNetFramework,
         MySQL,
+        postgresql,
         LINQ,
         Modding,
         CustomerService,
@@ -51,7 +53,9 @@
         MicrosoftExcel,
         ProblemSolving,
         React,
-        Blazor
+        Blazor,
+        Javascript,
+        Vue
     }
     public static class SkillModel
     {
@@ -90,6 +94,7 @@
             { Skill.MIPS, "MIPS"},
             { Skill.Teamwork, "Teamwork"},
             { Skill.Python, "Python"},
+            { Skill.Django, "Django"},
             { Skill.ProjectPlanning, "Project Planning"},
             { Skill.DataStructures, "Data Structures"},
             { Skill.AsymtoticNotation, "Asymptotic Notation"},
@@ -105,7 +110,10 @@
             { Skill.MicrosoftExcel, "Microsoft Excel"},
             { Skill.ProblemSolving, "Problem Solving"},
             { Skill.React, "React"},
-            { Skill.Blazor, "Blazor"}
+            { Skill.Blazor, "Blazor"},
+            { Skill.Vue, "Vue"},
+            { Skill.postgresql, "PostgreSQL"},
+            { Skill.Javascript, "Javascript"}
         };
         public static Dictionary<Skill, String> SkillsToDisplayImg = new Dictionary<Skill, string> {
             { Skill.None, "Error skill is none"},
@@ -123,12 +131,16 @@
             { Skill.Cplusplus, "SVGs/Languages/cpp.svg"},
             { Skill.VBA, "SVGs/Languages/VBA.svg"},
             { Skill.Python, "SVGs/Languages/python.svg"},
+            { Skill.Django, "SVGs/Languages/Django.svg"},
             { Skill.C, "SVGs/Languages/c.svg"},
             { Skill.dotNetFramework, "SVGs/Languages/dotNetFramework.svg"},
             { Skill.MySQL, "SVGs/Languages/MySQL.svg"},
             { Skill.LINQ, "SVGs/Languages/LINQ.svg"},
             { Skill.React, "SVGs/Languages/React.svg"},
-            { Skill.Blazor, "SVGs/Languages/Blazor.svg"}
+            { Skill.Blazor, "SVGs/Languages/Blazor.svg"},
+            { Skill.postgresql, "SVGs/Languages/postgresql.svg"},
+            { Skill.Javascript, "SVGs/Languages/javascript.svg"},
+            { Skill.Vue, "SVGs/Languages/vue.svg"}
         };
         public static Dictionary<Skill, String> SkillsToHrefExample = new Dictionary<Skill, string> {
             
@@ -137,8 +149,8 @@
         public static Dictionary<string, List<Skill>> SkillsByCategory = new Dictionary<string, List<Skill>>
         {
             { "Programming Languages And Tools", new List<Skill> { Skill.CSharp, Skill.Unity, Skill.Cplusplus,Skill.Unreal,
-                Skill.Python, Skill.Lua, Skill.Java, Skill.CSS,Skill.Html, Skill.C,Skill.MySQL, Skill.dotNetFramework, 
-                Skill.LINQ, Skill.XML, Skill.Json, Skill.Git, Skill.Firebase, Skill.React,Skill.Blazor, Skill.VBA } },
+                Skill.Python,Skill.Django, Skill.Lua, Skill.Java,Skill.Javascript, Skill.CSS,Skill.Html,Skill.Vue, Skill.C,Skill.MySQL,Skill.postgresql, Skill.dotNetFramework, 
+                Skill.LINQ, Skill.XML, Skill.Json, Skill.Git, Skill.Firebase, Skill.React,Skill.Blazor, Skill.VBA, } },
             { "Game Development", new List<Skill> { Skill.GameDesign, Skill.MobileGames, 
                 Skill.GameDevelopment, Skill.CasualGames, Skill.Modding } },
             { "Software Engineering Practices", new List<Skill> { Skill.DataAnalysis,Skill.NetworkEngineering, Skill.SoftwareTesting, 
