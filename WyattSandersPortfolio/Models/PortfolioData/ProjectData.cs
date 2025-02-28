@@ -35,17 +35,21 @@
             { "CharacterConcepting", new List<Skill> { Skill.GameDevelopment } },
             { "Pawtection", new List<Skill> { Skill.GameDevelopment, Skill.GameDesign, Skill.Lua, Skill.XML, Skill.CasualGames, Skill.Teamwork, Skill.ProjectPlanning } },
             { "TurnCloakGame", new List<Skill> { Skill.GameDevelopment, Skill.GameDesign, Skill.Cplusplus, Skill.Teamwork } },
-            { "SnowyDiorama", new List<Skill> { Skill.GameDevelopment, Skill.Cplusplus } },
+            { "SnowyDiorama", new List<Skill> { Skill.GameDevelopment, Skill.Cplusplus, Skill.Unreal } },
             { "SingularityTurnTracker", new List<Skill> { Skill.Lua, Skill.Modding, Skill.XML } },
             { "AmoebasAndMore", new List<Skill> { Skill.Modding, Skill.SoftwareTesting, Skill.GameDesign, Skill.DataStructures, Skill.Communication, Skill.Teamwork } },
             { "GameCraft", new List<Skill> { Skill.GameDesign, Skill.GameDevelopment, Skill.Communication, Skill.CSharp, Skill.Unity } },
             { "IDTech", new List<Skill> { Skill.Modding, Skill.SoftwareTesting, Skill.GameDesign, Skill.GameDevelopment, Skill.Java, Skill.dotNetFramework } },
-            { "MarbleDrop", new List<Skill> { Skill.GameDevelopment, Skill.CasualGames } }
+            { "MarbleDrop", new List<Skill> { Skill.GameDevelopment, Skill.CasualGames } },
+            { "OveLrap", new List<Skill> { Skill.CSharp, Skill.GameDevelopment, Skill.GameDesign, Skill.GameDevelopment, Skill.Unity } },
+            { "StampedSortedSabotaged", new List<Skill> { Skill.CSharp, Skill.GameDevelopment, Skill.CasualGames, Skill.Unity } }
         };
 
 
         public static readonly Dictionary<string, ImgProjectData> ImgProjectsToDescriptions = new Dictionary<string, ImgProjectData>
         {
+            { "OveLrap", new ImgProjectData{DisplayName = "OveLrap",DisplayImg = "Images/GamesProjects/OveLrap.jpg" , Caption="In a world where belief can be shaped by the right words, players combine adjectives and nouns to form powerful beliefs and experience the spread of disinformation first hand." } },
+            { "StampedSortedSabotaged", new ImgProjectData{DisplayName = "Stamped, Sorted, Sabotaged!",DisplayImg = "Images/GamesProjects/StampedSortedSabotaged.jpg" , Caption="Fast paced asymmetric local multiplayer game where one misplaced letter may be all it takes to change everything. Award for best visuals." } },
             { "SnowyDiorama", new ImgProjectData{DisplayName = "Snowy Diorama",DisplayImg = "Images/GamesProjects/SnowyDiorama01.gif" , Caption="Created a stylized snow diorama using Unreal 5, demonstrating hands-on skills in 3D modeling, texturing, and Niagara particle systems." } },
             { "Pawtection", new ImgProjectData{DisplayName = "Pawtection",DisplayImg = "Images/GamesProjects/pawtectionGameBoard.png" , Caption="Jigsaw your way through a heart-wrenching puzzle game of limited space and moral dilemmas in this competitive puzzle game." } },
             { "VideogameAnalysis", new ImgProjectData{DisplayName = "Game Controller Diagram",DisplayImg = "Images/GamesProjects/GamesControlMap.png" , Caption="Designed an intuitive game control diagram, mapping each in-game function to corresponding buttons on a controller." } },
