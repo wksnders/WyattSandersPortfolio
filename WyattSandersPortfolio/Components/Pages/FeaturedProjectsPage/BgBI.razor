@@ -1,0 +1,84 @@
+﻿<article id="BgBI">
+    <h2>Building a Multitenant Web App: From Data Visualization to Full-Scale Cloud Hosted Web App</h2>
+    <div>
+        <h3>How It Started</h3>
+        <p>
+            This project began with a focus on front-end data visualization. The goal was to create an intuitive way for sales representatives
+            to track key metrics and make data-driven decisions. As the project progressed, discussions expanded to the full vision and scope of the application.
+        </p>
+        <p>
+            The backend needed to incorporate data from two additional sources: the company's warehousing/inventory software and their old BI system.
+            We identified a significant opportunity—allowing B2B clients to view their order history, track sales performance, and seamlessly request new inventory
+            while browsing the product catalog. This alignment with business goals led to the decision to develop a multitenant application.
+        </p>
+
+        <h3>The Tech Stack</h3>
+        <ul>
+            <li><strong>Blazor:</strong> Modern, component-based frontend framework.</li>
+            <li><strong>ASP.NET Core:</strong> Secure, scalable backend for handling authentication and data processing.</li>
+            <li><strong>Azure:</strong> Deployment for scalability and reliability.</li>
+            <li><strong>Digital Ocean:</strong> Blob storage.</li>
+            <li><strong>GitHub Actions:</strong> CI/CD, automating testing and deployment.</li>
+        </ul>
+    </div>
+
+    <h3>Authentication and Authorization</h3>
+    <p>
+        Handling authentication and authorization for multiple tenants was a key focus. We implemented a shared database and shared schema to streamline development and
+        get the app running quickly. ASP.NET Core Identity, along with JWT-based authentication, provided a secure and reliable solution.
+    </p>
+
+    <h3>Data Visualization and Analytics</h3>
+    <p>
+        Sales reps rely on quick, digestible insights to make informed decisions. Using Blazor’s component model, I developed dynamic charts and visualizations, converting raw data into meaningful metrics.
+        Additionally, I implemented sortable, searchable, and filterable lists with key metric aggregations to provide users with exactly the information they needed.
+    </p>
+
+    <h3>ETL Processes</h3>
+    <p>
+        Integrating data from multiple sources required building efficient ETL (Extract, Transform, Load) pipelines. These processes pull data from the warehousing system and BI system,
+        transform the data, and load it into our structured format.
+    </p>
+
+    <h3>Implementing Presigned URLs with Digital Ocean and S3</h3>
+    <p>
+        A key feature of the app involved handling secure file uploads and downloads. To achieve this, I implemented presigned URLs using Digital Ocean Spaces and S3-compatible APIs.
+    </p>
+    <ol>
+        <li>Client requests a presigned URL from ASP.NET Core.</li>
+        <li>ASP.NET Core requests the URL from Digital Ocean Spaces.</li>
+        <li>ASP.NET Core returns the presigned URL to the frontend.</li>
+        <li>Client uploads the file directly using the presigned URL.</li>
+        <li>Client notifies the backend that the upload is complete.</li>
+        <li>ASP.NET Core verifies the file on Digital Ocean.</li>
+        <li>ASP.NET Core stores file reference in the database and returns a file ID.</li>
+    </ol>
+
+    <h3>Responsive Web Design</h3>
+    <p>
+        Given that users would be accessing the app from mobile phones, tablets, and desktops, I focused heavily on responsive design. Blazor’s component-based architecture
+        made it easy to adjust layouts dynamically and ensure compatibility across devices.
+    </p>
+
+    <h3>Collaboration and Agile Development</h3>
+    <p>
+        Ongoing collaboration with stakeholders was essential to refining the product. I worked iteratively, prioritizing features based on direct user feedback.
+        Using Git for version control, I maintained an organized workflow, ensuring smooth updates and efficient bug fixes.
+    </p>
+
+    <h3>User Adoption and Encouraging Feedback</h3>
+    <p>
+        Successfully rolling out the application required more than just development—it involved driving user adoption. I presented the platform to key stakeholders,
+        demonstrating its capabilities and gathering feedback.
+    </p>
+
+    <h3>Conclusion</h3>
+    <p>
+        This project evolved from simple data visualization into a full-scale multitenant BI platform, integrating complex authentication, analytics, and data processing.
+        Developing scalable solutions while ensuring an intuitive user experience was both a challenge and a rewarding experience.
+    </p>
+</article>
+
+@code {
+
+}
