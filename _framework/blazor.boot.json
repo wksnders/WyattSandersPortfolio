@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "WyattSandersPortfolio",
   "resources": {
-    "hash": "sha256-WopjiQmOMcdetKtx/RjZroEKZqmztzuLgJSgs/3aI7E=",
+    "hash": "sha256-3IM3uPzlZr27MJArJjceNJP+OKHmctzchqp796Tjjmk=",
     "jsModuleNative": {
       "dotnet.native.8.0.13.f1wj86lvfk.js": "sha256-xNQsYHtL1vcbrVTHDZAwJM4WovpoyjsrM2C6FQ8cW1w="
     },
@@ -46,7 +46,7 @@
       "System.Text.Encodings.Web.wasm": "sha256-6URfVB7NbdkQ/E6UMKjkdn5lNGBCKhisW0LpVUmWLME=",
       "System.Text.Json.wasm": "sha256-P4opPcvqc6fX6nyk8jZ3uDYr7WizvBnMN+zV3yOMYHA=",
       "System.Text.RegularExpressions.wasm": "sha256-AGgpeUcZlu30alJ+FMFQvv4lDT6lT9EcfLrxzigrebk=",
-      "WyattSandersPortfolio.wasm": "sha256-eSx3U1etCOwdBfpgMCsTPeuL/eI4FmTY041zoGLCdg0="
+      "WyattSandersPortfolio.wasm": "sha256-4XGfmtTxfV8JT0Tu1SO64JRri8m4cHHHW1aLsXbpDpQ="
     }
   },
   "cacheBootResources": true,

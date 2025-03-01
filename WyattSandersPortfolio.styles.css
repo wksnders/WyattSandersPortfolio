@@ -1047,6 +1047,12 @@ h4[b-vug9y63i56] {
     .inventory-table tr:nth-child(even)[b-vug9y63i56] {
         background-color: rgba(255, 255, 255, 0.05);
     }
+/* /Components/Pages/FeaturedProjectsPage/BgBI.razor.rz.scp.css */
+article[b-yjnukwbz3g] {
+    min-height: 90vh;
+    padding: 5rem 1.5rem 1rem 1.5rem;
+    background: #fff;
+}
 /* /Components/Pages/FeaturedProjectsPage/Prayr.razor.rz.scp.css */
 article[b-khgqtssdjx] {
     min-height:90vh;
@@ -1102,7 +1108,8 @@ a[b-khgqtssdjx] {
 }
 /* /Components/Pages/FeaturedProjectsPage/Singularity.razor.rz.scp.css */
 article[b-t6tv9ubi57] {
-    min-height: 90vh;
+    min-height: 90dvh;
+    margin-bottom: 40dvh;
 }
 .singularity-title-img[b-t6tv9ubi57] {
     max-width:100%;
@@ -1172,6 +1179,7 @@ ul[b-t6tv9ubi57] {
 }
 /* /Components/Pages/FeaturedProjectsPage/TowerRush.razor.rz.scp.css */
 article[b-4n7evb9zjk] {
+    border-top: 2px solid #808080;
     min-height: 90vh;
     padding: 7rem 1.5rem 1rem 1.5rem;
     background: #000;
