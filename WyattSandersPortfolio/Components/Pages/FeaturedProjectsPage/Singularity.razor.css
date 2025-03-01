@@ -1,5 +1,6 @@
 ﻿article {
-    min-height: 90vh;
+    min-height: 90dvh;
+    margin-bottom: 40dvh;
 }
 .singularity-title-img {
     max-width:100%;
