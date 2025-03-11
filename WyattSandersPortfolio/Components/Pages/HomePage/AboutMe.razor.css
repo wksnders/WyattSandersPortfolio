@@ -69,9 +69,80 @@ h4 {
     flex-grow: 2;
 }
 
+.column {
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-@media screen and (min-width: 900px) 
-{
+    .column * {
+        width:100%;
+        text-align:left;
+        flex-grow: 1;
+        margin: 0;
+    }
+
+.education-content {
+    padding: 1rem 1.5rem;
+    background: #fff;
+    box-shadow: 0 6px 24px -6px #0000001a;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.university-title-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 10px;
+}
+
+.university-logo {
+    width: 80px; 
+    height: auto;
+}
+
+.university-name {
+    margin: 0;
+}
+
+.degree {
+    color: #555;
+}
+
+coursework-list span {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.7em;
+    font-family: Arial,sans-serif;
+    color: #5d5d5d;
+}
+
+.red-underline {
+    position: relative;
+    display: inline-block;
+}
+
+    .red-underline::after {
+        content: "";
+        display: block;
+        height: 3px;
+        background: #CC0001;
+        transform: scaleX(1.1);
+    }
+
+@media screen and (min-width: 900px) {
+    .education-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .about-me-content {
         display: flex;
     }

@@ -1,81 +1,97 @@
 ﻿<article id="BgBI">
-    <h2>Building a Multitenant Web App: From Data Visualization to Full-Scale Cloud Hosted Web App</h2>
+    <h2 class="header-text weight-heavy">Building a Multitenant Web App: From Data Visualization to Full-Scale Cloud Hosted Web App</h2>
     <div>
-        <h3>How It Started</h3>
-        <p>
+        <h3 class="subheader-text weight-heavy">How It Started</h3>
+        <p class="body-text">
             This project began with a focus on front-end data visualization. The goal was to create an intuitive way for sales representatives
             to track key metrics and make data-driven decisions. As the project progressed, discussions expanded to the full vision and scope of the application.
         </p>
-        <p>
+        <p class="body-text">
             The backend needed to incorporate data from two additional sources: the company's warehousing/inventory software and their old BI system.
             We identified a significant opportunity—allowing B2B clients to view their order history, track sales performance, and seamlessly request new inventory
             while browsing the product catalog. This alignment with business goals led to the decision to develop a multitenant application.
         </p>
 
-        <h3>The Tech Stack</h3>
+        <h3 class="subheader-text weight-heavy">The Tech Stack</h3>
         <ul>
-            <li><strong>Blazor:</strong> Modern, component-based frontend framework.</li>
-            <li><strong>ASP.NET Core:</strong> Secure, scalable backend for handling authentication and data processing.</li>
-            <li><strong>Azure:</strong> Deployment for scalability and reliability.</li>
-            <li><strong>Digital Ocean:</strong> Blob storage.</li>
-            <li><strong>GitHub Actions:</strong> CI/CD, automating testing and deployment.</li>
+            <li class="body-text"><strong>Vue:</strong> Modern, component-based frontend framework.</li>
+            <li class="body-text"><strong>Django:</strong> Open source, secure, scalable backend for handling authentication and data processing.</li>
+            <li class="body-text"><strong>Azure:</strong> Deployment for scalability and reliability.</li>
+            <li class="body-text"><strong>Digital Ocean:</strong> Blob storage.</li>
+            <li class="body-text"><strong>GitHub Actions:</strong> CI/CD, automating testing and deployment.</li>
         </ul>
     </div>
 
-    <h3>Authentication and Authorization</h3>
-    <p>
+    <h3 class="subheader-text weight-heavy">Authentication and Authorization</h3>
+    <p class="body-text">
         Handling authentication and authorization for multiple tenants was a key focus. We implemented a shared database and shared schema to streamline development and
-        get the app running quickly. ASP.NET Core Identity, along with JWT-based authentication, provided a secure and reliable solution.
+        get the app running quickly. Django's session-based authentication, provided a secure and reliable solution.
     </p>
 
-    <h3>Data Visualization and Analytics</h3>
-    <p>
-        Sales reps rely on quick, digestible insights to make informed decisions. Using Blazor’s component model, I developed dynamic charts and visualizations, converting raw data into meaningful metrics.
+    <h3 class="subheader-text weight-heavy">Data Visualization and Analytics</h3>
+    <p class="body-text">
+        Sales reps rely on quick, digestible insights to make informed decisions. Using Vue’s component model, I developed dynamic charts and visualizations, converting raw data into meaningful metrics.
         Additionally, I implemented sortable, searchable, and filterable lists with key metric aggregations to provide users with exactly the information they needed.
     </p>
 
-    <h3>ETL Processes</h3>
-    <p>
-        Integrating data from multiple sources required building efficient ETL (Extract, Transform, Load) pipelines. These processes pull data from the warehousing system and BI system,
-        transform the data, and load it into our structured format.
+    <h3 class="subheader-text weight-heavy">ETL Processes</h3>
+    <p class="body-text">
+        Integrating data from multiple sources required building efficient ETL (Extract, Transform, Load) pipelines. The goal was to pull data from the warehousing system and BI system,
+        transform the data, and load it into our structured format. To do this I wrote a simple python script that could be run by the Warehousing database server that could push new 
+        information directly to our Django backend. 
     </p>
 
-    <h3>Implementing Presigned URLs with Digital Ocean and S3</h3>
-    <p>
-        A key feature of the app involved handling secure file uploads and downloads. To achieve this, I implemented presigned URLs using Digital Ocean Spaces and S3-compatible APIs.
+    <h3 class="subheader-text weight-heavy">Implementing Presigned URLs with Digital Ocean and S3</h3>
+    <p class="body-text">
+        A key feature of the app involved handling secure file uploads and downloads. To achieve this, I implemented presigned URLs using Digital Ocean Spaces an S3-compatible API.
     </p>
     <ol>
-        <li>Client requests a presigned URL from ASP.NET Core.</li>
-        <li>ASP.NET Core requests the URL from Digital Ocean Spaces.</li>
-        <li>ASP.NET Core returns the presigned URL to the frontend.</li>
-        <li>Client uploads the file directly using the presigned URL.</li>
-        <li>Client notifies the backend that the upload is complete.</li>
-        <li>ASP.NET Core verifies the file on Digital Ocean.</li>
-        <li>ASP.NET Core stores file reference in the database and returns a file ID.</li>
+        <li class="body-text">The client requests a presigned URL from the Django backend.</li>
+        <li class="body-text">Django generates the URL using the Digital Ocean Spaces API (S3).</li>
+        <li class="body-text">Digital Ocean returns the presigned URL to Django.</li>
+        <li class="body-text">Django server responds to the Client with the presigned URL.</li>
+        <li class="body-text">The client uploads the file directly to Digital Ocean Spaces.</li>
+        <li class="body-text">The client notifies the backend that the upload is complete.</li>
+        <li class="body-text">Django updates the database record to mark the file as uploaded and returns a file ID.</li>
     </ol>
 
-    <h3>Responsive Web Design</h3>
-    <p>
-        Given that users would be accessing the app from mobile phones, tablets, and desktops, I focused heavily on responsive design. Blazor’s component-based architecture
+    <h5 class="secondary-subheader-text">
+        That's a lot of steps! so why bother?
+    </h5>
+    <p class="body-text">
+        Let's compare it to traditional file uploading, where a user simply uploads the file directly to the backend, and the backend manages storage. Since the file is uploaded to the backend server, a worker must handle the file upload and receive the data, consuming resources that could be used for other users.
+    </p>
+    <p class="body-text">
+        Traditional file uploads strain backend resources since the server must process and store every file. Slow uploads tie up worker threads, leading to delays, higher infrastructure costs, and scalability issues.
+    </p>
+    <p class="body-text">
+        Additionally, upload speeds depend on the user's internet connection, meaning slow uploads can tie up backend resources for extended periods. As more users upload files, additional backend resources may be required, increasing infrastructure costs and making the system less scalable.
+    </p>
+    <p class="body-text">
+        Using presigned URLs shifts the burden to Digital Ocean Spaces, allowing files to be uploaded directly to storage without passing through the backend. This approach reduces the need for additional compute power, lowering infrastructure costs while improving scalability and performance. With fewer server resources dedicated to handling file transfers, the backend remains responsive, ensuring a better user experience while keeping operational expenses under control.
+    </p>
+
+    <h3 class="subheader-text weight-heavy">Responsive Web Design</h3>
+    <p class="body-text">
+        Given that users would be accessing the app from mobile phones, tablets, and desktops, I focused heavily on responsive design. Vue’s component-based architecture
         made it easy to adjust layouts dynamically and ensure compatibility across devices.
     </p>
 
-    <h3>Collaboration and Agile Development</h3>
-    <p>
+    <h3 class="subheader-text weight-heavy">Collaboration and Agile Development</h3>
+    <p class="body-text">
         Ongoing collaboration with stakeholders was essential to refining the product. I worked iteratively, prioritizing features based on direct user feedback.
         Using Git for version control, I maintained an organized workflow, ensuring smooth updates and efficient bug fixes.
     </p>
 
-    <h3>User Adoption and Encouraging Feedback</h3>
-    <p>
+    <h3 class="subheader-text weight-heavy">User Adoption and Encouraging Feedback</h3>
+    <p class="body-text">
         Successfully rolling out the application required more than just development—it involved driving user adoption. I presented the platform to key stakeholders,
-        demonstrating its capabilities and gathering feedback.
+        demonstrating its capabilities and encoraging a culture of proactive feedback.
     </p>
 
-    <h3>Conclusion</h3>
-    <p>
-        This project evolved from simple data visualization into a full-scale multitenant BI platform, integrating complex authentication, analytics, and data processing.
-        Developing scalable solutions while ensuring an intuitive user experience was both a challenge and a rewarding experience.
+    <h3 class="subheader-text weight-heavy">Conclusion</h3>
+    <p class="body-text">
+        This project evolved from simple data visualization into a scalable, multitenant BI platform that streamlined authentication, analytics, and data processing. The experience reinforced my ability to design efficient, cloud-based solutions that balance performance with usability.
     </p>
 </article>
 

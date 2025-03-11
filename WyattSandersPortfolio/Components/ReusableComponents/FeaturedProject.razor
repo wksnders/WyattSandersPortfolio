@@ -1,4 +1,5 @@
-﻿<a class="project-container" href="@ProjectLink">
+﻿@inject NavigationManager Navigation
+<a class="project-container" @onclick="NavigateToSection">
     <div class="project-info">
         <h2 class="subheader-text weight-heavy">@Title</h2>
         <div class="project-link">
@@ -19,4 +20,9 @@
     public required string ProjectImage { get; set; }
     [Parameter]
     public required string ProjectLink { get; set; }
+
+    private void NavigateToSection()
+    {
+        Navigation.NavigateTo(ProjectLink, forceLoad: false);
+    }
 }
