@@ -41,11 +41,19 @@
                     q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
                 });
                 if (q.p !== undefined) {
-                    window.history.replaceState(null, null,
-                        l.pathname.slice(0, -1) + (q.p || '') +
+                    var newUrl = l.pathname.replace(/\/$/, '') + (q.p || '') +
                         (q.q ? ('?' + q.q) : '') +
-                        l.hash
-                    );
+                        (l.hash ? l.hash : '');
+
+                    // Delay replacing state slightly to ensure SPA routing works correctly
+                    setTimeout(() => {
+                        window.history.replaceState(null, null, newUrl);
+
+                        // Ensure hash navigation is triggered
+                        if (l.hash) {
+                            window.location.hash = l.hash;
+                        }
+                    }, 10);
                 }
             }
         }(window.location))

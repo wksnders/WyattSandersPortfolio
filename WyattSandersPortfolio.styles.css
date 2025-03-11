@@ -1053,6 +1053,38 @@ article[b-yjnukwbz3g] {
     padding: 5rem 1.5rem 1rem 1.5rem;
     background: #fff;
 }
+
+h2[b-yjnukwbz3g] {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 5px;
+}
+
+h3[b-yjnukwbz3g] {
+    color: #3498db;
+    margin-top: 25px;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+
+/* Paragraphs */
+p[b-yjnukwbz3g] {
+    margin-bottom: 15px;
+}
+
+ul[b-yjnukwbz3g], ol[b-yjnukwbz3g] {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+li[b-yjnukwbz3g] {
+    margin-bottom: 8px;
+}
+
+strong[b-yjnukwbz3g] {
+    color: #2c3e50;
+}
 /* /Components/Pages/FeaturedProjectsPage/Prayr.razor.rz.scp.css */
 article[b-khgqtssdjx] {
     min-height:90vh;
@@ -1300,9 +1332,80 @@ h4[b-g2mx8k4s1k] {
     flex-grow: 2;
 }
 
+.column[b-g2mx8k4s1k] {
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-@media screen and (min-width: 900px) 
-{
+    .column *[b-g2mx8k4s1k] {
+        width:100%;
+        text-align:left;
+        flex-grow: 1;
+        margin: 0;
+    }
+
+.education-content[b-g2mx8k4s1k] {
+    padding: 1rem 1.5rem;
+    background: #fff;
+    box-shadow: 0 6px 24px -6px #0000001a;
+    max-width: 60rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.university-title-box[b-g2mx8k4s1k] {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 10px;
+}
+
+.university-logo[b-g2mx8k4s1k] {
+    width: 80px; 
+    height: auto;
+}
+
+.university-name[b-g2mx8k4s1k] {
+    margin: 0;
+}
+
+.degree[b-g2mx8k4s1k] {
+    color: #555;
+}
+
+coursework-list span[b-g2mx8k4s1k] {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.7em;
+    font-family: Arial,sans-serif;
+    color: #5d5d5d;
+}
+
+.red-underline[b-g2mx8k4s1k] {
+    position: relative;
+    display: inline-block;
+}
+
+    .red-underline[b-g2mx8k4s1k]::after {
+        content: "";
+        display: block;
+        height: 3px;
+        background: #CC0001;
+        transform: scaleX(1.1);
+    }
+
+@media screen and (min-width: 900px) {
+    .education-content[b-g2mx8k4s1k] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .about-me-content[b-g2mx8k4s1k] {
         display: flex;
     }
@@ -1437,6 +1540,36 @@ ul[b-9iiedwtzdr] {
         grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
     }
 }
+/* /Components/Pages/HomePage/RecentWork.razor.rz.scp.css */
+.recent-work[b-wt918lakb8] {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+    .recent-work h2[b-wt918lakb8] {
+        margin-bottom: 1rem;
+    }
+
+.project[b-wt918lakb8] {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+    .project h3[b-wt918lakb8] {
+        margin-bottom: 0.5rem;
+    }
+
+    .project ul[b-wt918lakb8] {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .project a[b-wt918lakb8] {
+        color: #007bff;
+        text-decoration: none;
+    }
 /* /Components/Pages/HomePage/TestimonialsSection.razor.rz.scp.css */
 *[b-o88f2w425w] {
     text-align:center;
