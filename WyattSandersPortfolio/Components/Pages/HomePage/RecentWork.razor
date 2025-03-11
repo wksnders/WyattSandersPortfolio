@@ -1,0 +1,45 @@
+﻿@inject NavigationManager Navigation
+
+<section class="recent-work">
+    <h2 class="header-text">Recent Work</h2>
+
+    <div class="project">
+        <h3 class="subheader-text">BI App for Sales Insights</h3>
+        <p class="body-text">Designed, developed and deployed a multitenant web application using Django and Vue 3 on Azure with github actions for CI/CD. The App functions as a BI tool, expense tracker, and daily metrics dashboard, enabling sales representatives to manage client notes, track expenses and monitor and share key data.</p>
+        <ul>
+            <li class="body-text">Implemented S3 presigned URLs allowing direct file upload to reduce server load.</li>
+            <li class="body-text">Developed automated ETL processes for seamless data transformation.</li>
+        </ul>
+            <a href="javascript:void(0);" @onclick="@(() => NavigateToSection($@"FeaturedProjects#BgBI"))">Read More →</a>
+    </div>
+
+    <div class="project">
+        <h3 class="subheader-text">HTML5 Canvas Experiments</h3>
+        <p class="body-text">Interactive experiments using js and Vue to explore using the HTML canvas.</p>
+        <ul>
+            <li class="body-text">Created a simple particle system to interact with the boids algorithm.</li>
+            <li class="body-text">created the game breakout with some simple adjustable parameters.</li>
+        </ul>
+        <a href="javascript:void(0);" @onclick="@(() => NavigateToSection($@"FeaturedProjects#CanvasExplore"))">Read More →</a>
+    </div>
+    <!--
+    <div class="project">
+        <h3 class="subheader-text">Another Experiment (Optional)</h3>
+        <p class="body-text">A brief explanation of another project.</p>
+        <ul>
+            <li class="body-text">Key feature or challenge solved.</li>
+            <li class="body-text">Interesting technical aspect.</li>
+        </ul>
+        <a href="javascript:void(0);" @onclick="@(() => NavigateToSection($@"FeaturedProjects#placeholder"))">Read More →</a>
+    </div>-->
+</section>
+
+
+@code {
+
+    private void NavigateToSection(string ProjectLink)
+    {
+        Navigation.NavigateTo(ProjectLink, forceLoad: false);
+    }
+
+}
