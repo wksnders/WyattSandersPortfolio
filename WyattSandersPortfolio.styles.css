@@ -1260,6 +1260,44 @@ section[b-4n7evb9zjk] {
     padding: 1em;
     border-radius: 18px;
 }
+/* /Components/Pages/FeaturedProjectsPage/VueCanvasExplore.razor.rz.scp.css */
+article[b-rwpp5kddle] {
+    min-height: 90vh;
+    padding: 5rem 1.5rem 1rem 1.5rem;
+    background: #fff;
+}
+
+h2[b-rwpp5kddle] {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 5px;
+}
+
+h3[b-rwpp5kddle] {
+    color: #3498db;
+    margin-top: 25px;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+
+/* Paragraphs */
+p[b-rwpp5kddle] {
+    margin-bottom: 15px;
+}
+
+ul[b-rwpp5kddle], ol[b-rwpp5kddle] {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+li[b-rwpp5kddle] {
+    margin-bottom: 8px;
+}
+
+strong[b-rwpp5kddle] {
+    color: #2c3e50;
+}
 /* /Components/Pages/HomePage/AboutMe.razor.rz.scp.css */
 
 *[b-g2mx8k4s1k] {
